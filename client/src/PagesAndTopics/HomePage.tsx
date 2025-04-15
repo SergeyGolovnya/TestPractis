@@ -28,6 +28,12 @@ export function HomePage() {
           >
             Перейти к StyleReactExample
           </button>
+          <button 
+            className="nav-button"
+            onClick={() => navigate('/reactSobesPractis')}
+          >
+            Перейти к StyleReactExample
+          </button>
         </nav>
       </main>
     </div>
