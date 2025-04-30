@@ -13,6 +13,7 @@
 - Управление состоянием приложения
 */
 
+
 // ============ Задача 1: Последовательное выполнение операций ============
 const asyncOperations = [
     { id: 1, name: "Загрузка данных", delay: 1000 },
@@ -49,6 +50,7 @@ const files = [
     { id: 2, name: "config.json", content: "{}" },
     { id: 3, name: "log.txt", content: "Error log" }
 ];
+
 
 // ============ Функция обработки файлов ============
 function processFiles(files, successCallback, errorCallback) {
