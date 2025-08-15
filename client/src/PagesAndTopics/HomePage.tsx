@@ -34,6 +34,12 @@ export function HomePage() {
           >
             Перейти к StyleReactExample
           </button>
+          <button 
+            className="nav-button"
+            onClick={() => navigate('/tictactoe')}
+          >
+            Приложение крестики нолики
+          </button>
         </nav>
       </main>
     </div>
