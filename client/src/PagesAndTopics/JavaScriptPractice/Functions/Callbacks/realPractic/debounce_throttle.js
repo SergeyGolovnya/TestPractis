@@ -6,6 +6,8 @@
 - Улучшение производительности
 */
 
+
+
 // Реализация debounce
 function debounce(func, wait) {
     let timeout;

@@ -16,10 +16,10 @@
 //  * 4. array - исходный массив
 //  */
 
-// // Пример 1: Сумма всех элементов массива
-// const numbers = [1, 2, 3, 4, 5];
-// const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-// console.log(sum); // 15
+// Пример 1: Сумма всех элементов массива
+const numbers = [x=> x + 1, x=> x + 2];
+const sum = numbers.reduce((acc, curr) => acc + curr(1), 0);
+console.log(sum); // 15
 
 // // Пример 2: Поиск максимального значения
 // const max = numbers.reduce((acc, curr) => Math.max(acc, curr));
@@ -102,7 +102,7 @@
 
 
 
-// Пример 1: Сумма всех элементов массива
-const numbers = [1, 2, 3, 4, 5];
-const sum = numbers.reduce((acc, item) => acc + item, 10)
-console.log(sum)
+// // Пример 1: Сумма всех элементов массива
+// const numbers = [1, 2, 3, 4, 5];
+// const sum = numbers.reduce((acc, item) => acc + item, 10)
+// console.log(sum)

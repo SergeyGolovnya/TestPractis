@@ -9,19 +9,41 @@
  */
 
 // Пример 1: Простой GET запрос
-fetch('https://jsonplaceholder.typicode.com/users/1')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Ошибка сети');
+// fetch('https://jsonplaceholder.typicode.com/users/1')
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Ошибка сети');
+//         }
+//         return response.json();
+//     })
+//     .then(data => {
+//         console.log('Улица:', data.address.street);
+//     })
+//     .catch(error => {
+//         console.error('Ошибка:', error);
+//     });
+
+export async function getUser () {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users/2')
+        if(!response.ok) {
+            throw new Error(`HTTP ошибка! статус: ${response.status}`)
         }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Улица:', data.address.street);
-    })
-    .catch(error => {
-        console.error('Ошибка:', error);
-    });
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return console.error(error)
+    }
+}
+console.log(await getUser().then(res => res.name))
+
+export async function postUser () {
+    try {
+        
+    } catch (error) {
+        return console.error
+    }
+}
 
 
 // // Пример 2: POST запрос с данными
