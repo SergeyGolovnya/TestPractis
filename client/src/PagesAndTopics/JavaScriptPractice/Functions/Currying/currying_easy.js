@@ -42,6 +42,7 @@ function curry(a) {
 const functionCurry1 = curry(3)
 console.log(functionCurry1(4)(5))
 
+// Карирование строчное
 const multiply = a => b => c => a * b * c;
 console.log(multiply(2)(3)(4)); // 24
 
@@ -57,3 +58,19 @@ function greet(greeting) {
 }
 
 console.log(greet('Привет')('Сергей')('!')); // Привет, Сергей!
+
+
+// Личная практика
+
+function some (a) {
+    return function (b) {
+        return function (c) {
+            return function (d) {
+                return a+b+c+d
+            }
+        }
+    }
+}
+
+const start = some(100)
+console.log(start(10)(10)(10))
