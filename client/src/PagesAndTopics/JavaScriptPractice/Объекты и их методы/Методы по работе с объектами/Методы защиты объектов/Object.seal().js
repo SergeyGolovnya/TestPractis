@@ -11,7 +11,7 @@
  * Запечатанный объект
  */
 
-// Пример 1: Запечатывание простого объекта
+/* // Пример 1: Запечатывание простого объекта
 const person = {
     name: 'Иван',
     age: 30
@@ -60,7 +60,7 @@ const sealed = Object.seal({ x: 1 });
 
 // frozen.x = 2; // TypeError: Cannot assign to read only property 'x'
 sealed.x = 2; // Работает
-console.log(sealed.x); // 2
+console.log(sealed.x); // 2 */
 
 /*
 Задача на работу с Object.seal():
@@ -92,3 +92,43 @@ const project = {
 */
 
 // Ваше решение: 
+
+const project = {
+    name: 'Веб-приложение',
+    budget: 100000,
+    team: {
+        lead: 'Иван',
+        developers: ['Анна', 'Петр', 'Мария']
+    },
+    status: 'В разработке',
+    deadlines: ['2024-03-01', '2024-04-15', '2024-05-30']
+}
+
+
+Object.seal(project)
+
+project.name = 'Другое приложение'; // + изменилось
+// project.client = 'Сергей'; // Cannot add property client, object is not extensible
+// delete project.status; // TypeError: Cannot delete property 'status' of #<Object>
+project.team.lead = 'Вася'; // + изменилось
+project.team.developers.push('Спанч Боб'); // + изменилось
+project.deadlines[0] = '2024-02-03'; // + изменилось
+
+console.log(Object.isSealed(project)); // true
+console.log(Object.isExtensible(project)) // false
+
+
+// Дргуой подход
+
+const project2 = {
+    name: 'Приложение 2'
+}
+
+// Создаем универсальную функцию чтобы использовать потом obj.createSealedProject()
+Object.prototype.createSealedProject = function() {
+    return Object.seal(this)
+}
+
+project2.createSealedProject()
+
+console.log(Object.isSealed(project2))

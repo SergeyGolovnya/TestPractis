@@ -1,8 +1,8 @@
-// Метод pop() удаляет последний элемент из массива и возвращает его значение
+// Метод pop(index) удаляет последний элемент из массива и возвращает его значение
 
 /*
 Синтаксис:
-array.pop()
+array.pop(index)
 
 Параметры:
 - Метод не принимает параметров
@@ -14,11 +14,11 @@ array.pop()
 Изменяет исходный массив: Да
 */
 
-// //1. Массивы с числами
-// const numbers = [1, 2, 3, 4, 5]; // удалить последний элемент
-// numbers.pop();
-// console.log(numbers); // [1, 2, 3, 4] - мутирует массив
-// console.log(numbers.pop()); // 5 - возвращает удаленный элемент
+//1. Массивы с числами
+const numbers = [1, 2, 3, 4, 5]; // удалить последний элемент
+console.log(numbers.pop());
+console.log(numbers.pop());
+console.log(numbers.pop());
 
 // //2. Массивы с строками
 // const names = ['John', 'Jane', 'Jim', 'Jill']; // удалить последний элемент
@@ -26,7 +26,7 @@ array.pop()
 // console.log(names); // ['John', 'Jane', 'Jim'] - мутирует массив
 // console.log(names.pop()); // 'Jill' - возвращает удаленный элемент
 
-// //3. Массивы с объектами
+//3. Массивы с объектами
 // const users = [
 //     { id: 1, name: 'John' },
 //     { id: 2, name: 'Jane' },
@@ -72,7 +72,3 @@ array.pop()
    - Удаленный элемент
    - Массив после удаления
 */
-
-const example = [2,3,4,4,3,2,1,4,6,7,8]
-console.log(example.splice(1,2))
-console.log(example)
